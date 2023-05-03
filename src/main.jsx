@@ -9,6 +9,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Recipes from './components/Recipes/Recipes.jsx';
 
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     {
       path:'blog',
       element:<Blog></Blog>
+    },
+    {
+      path:'recipe',
+      element:<Recipes></Recipes>
     },
     {
       path:'home',
