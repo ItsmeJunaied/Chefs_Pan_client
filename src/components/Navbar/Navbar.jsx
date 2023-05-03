@@ -8,7 +8,7 @@ const Navbar = () => {
                 <img className='logo w-40 h-40' src={logo} alt="Not found" />
             </div>
             <div className="link-pages  mx-auto">
-                <Link className='' to='/'>Home</Link>
+                <Link className='' to='/home'>Home</Link>
                 <Link className='ml-4' to='/blog'>Blogs</Link>
             </div>
 

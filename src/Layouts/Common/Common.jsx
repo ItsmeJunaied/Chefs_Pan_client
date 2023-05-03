@@ -7,7 +7,7 @@ import Home from '../../components/Home/Home';
 const Common = () => {
     return (
         <div>
-            <Home></Home>
+            <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

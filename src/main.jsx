@@ -2,21 +2,28 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-
+import Common from './Layouts/Common/Common.jsx';
+import Blog from './components/BLogs/Blog.jsx';
+import Home from './components/Home/Home.jsx';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Common from './Layouts/Common/Common.jsx';
-import Blog from './components/BLogs/Blog.jsx';
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Common></Common>,
-    children:[{
+    children:[
+    {
       path:'blog',
       element:<Blog></Blog>
+    },
+    {
+      path:'home',
+      element:<Home></Home>,
+      loader: ()=>fetch(`http://localhost:5000/chefsdata`)
     },
 
     ]
