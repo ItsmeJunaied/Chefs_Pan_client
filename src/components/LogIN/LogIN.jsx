@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import image from '../../../images/login-2.jpg'
 import { AuthContext } from '../providers/AuthProvider';
 const LogIN = () => {
     const {signIN}=useContext(AuthContext)
     const navigate=useNavigate();
+    const location =useLocation();
+
+    const from =location.state?.from.pathname ||  '/home'
     const handleLogin=event=>{
         event.preventDefault();
 
@@ -18,7 +21,7 @@ const LogIN = () => {
         .then(result=>{
             const loggedUser=result.user;
             console.log(loggedUser)
-            navigate('/home');
+            navigate(from,{replace: true});
         })
         .catch(error=>{
             console.log(error);
