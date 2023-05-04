@@ -1,0 +1,41 @@
+.background{
+    background-color: #F9F9F9;
+}
+.xxx{
+    padding-bottom: 40px;
+}
+.us{
+    font-size: 70px;
+    color: orange;
+    font-weight: bold;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.ab1{
+    width: 700px;
+    height: 564px;
+}
+.abImg{
+    width: 280px;
+    height: 180px;
+    margin-left: 20px;
+}
+.gallary{
+    color: gray;
+}
+.about-title{
+    font-family: 'Courgette', cursive;
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+.bor{
+    margin-bottom: 40px;
+    color: blanchedalmond;
+}
+.about-slogan{
+    font-family: 'Mukta', sans-serif;
+    font-size: 15px;
+    color: darkgray;
+    word-wrap: break-word;
+    margin-bottom: 35px;
+}

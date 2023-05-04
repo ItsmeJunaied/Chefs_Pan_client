@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import Recipes from './components/Recipes/Recipes.jsx';
 import RecipesCard from './components/recipesCard/recipesCard.jsx';
-import Test from './components/Test/Test.jsx';
+import AboutUs from './components/AboutUs/AboutUs.jsx';
 
 
 const router = createBrowserRouter([
@@ -24,8 +24,8 @@ const router = createBrowserRouter([
       element:<Blog></Blog>
     },
     {
-      path:'test',
-      element:<Test></Test>
+      path:'aboutus',
+      element:<AboutUs></AboutUs>
     },
     {
       path:'/chefsdata/:id',
