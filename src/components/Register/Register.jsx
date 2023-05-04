@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import image from '../../../images/login-2.jpg'
+import { AuthContext } from '../providers/AuthProvider';
 const LogIN = () => {
     const [error,setError]=useState('');
-
+    const{createUser}= useContext(AuthContext);
     const handleRegister=event=>{
         event.preventDefault();
 
@@ -14,12 +15,19 @@ const LogIN = () => {
         const name=form.name.value;
 
         console.log(name,email,password,photo);
-
+        setError('');
         if(password.length<6){
             setError('password Must be 6 characters')
         }
-
-
+        createUser(email,password)
+        .then(result=>{
+            const loggedUser=result.user;
+            console.log(loggedUser)
+        })
+        .catch(error=>{
+            console.log(error);
+            setError(error.message);
+        })
     }
 
     return (

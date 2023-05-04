@@ -1,18 +1,29 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import image from '../../../images/login-2.jpg'
+import { AuthContext } from '../providers/AuthProvider';
 const LogIN = () => {
-
-
+    const {signIN}=useContext(AuthContext)
+    const navigate=useNavigate();
     const handleLogin=event=>{
         event.preventDefault();
 
         const form=event.target;
         const email=form.email.value;
         const password=form.password.value;
-        const photo=form.photo.value;
 
-        console.log(email,password,photo);
+
+        console.log(email,password);
+        signIN(email,password)
+        .then(result=>{
+            const loggedUser=result.user;
+            console.log(loggedUser)
+            navigate('/home');
+        })
+        .catch(error=>{
+            console.log(error);
+            setError(error.message);
+        })
     }
 
     return (
@@ -35,12 +46,7 @@ const LogIN = () => {
                             </label>
                             <input className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" name='email' placeholder="Email" required/>
                         </div>
-                        <div className="mb-4">
-                            <label className="block text-gray-700 font-bold mb-2" for="email">
-                                Photo URL
-                            </label>
-                            <input className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text" name='photo' placeholder="Photo URL" required/>
-                        </div>
+                   
                         <div className="mb-6">
                             <label className="block text-gray-700 font-bold mb-2" for="password">
                                 Password
