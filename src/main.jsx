@@ -10,6 +10,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Recipes from './components/Recipes/Recipes.jsx';
+import RecipesCard from './components/recipesCard/recipesCard.jsx';
 
 
 const router = createBrowserRouter([
@@ -22,8 +23,9 @@ const router = createBrowserRouter([
       element:<Blog></Blog>
     },
     {
-      path:'recipe',
-      element:<Recipes></Recipes>
+      path:'/chefsdata/:id',
+      element:<Recipes></Recipes>,
+      loader:({params})=>fetch(`http://localhost:5000/chefsdata/${params.id}`)
     },
     {
       path:'home',

@@ -14,7 +14,7 @@ const ChefsCard = ({ data }) => {
                     <p>Experience:{experience} years</p>
                     <p>Numbers of recipes:{num_recipes}</p>
                     <p>Likes:{likes}</p>
-                    <Link to={'/recipe'}><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                    <Link to={`/chefsdata/${id}`}><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                     View Recipes
                     </button>
                     </Link>
