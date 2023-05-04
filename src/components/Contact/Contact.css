@@ -1,0 +1,16 @@
+.Contact{
+    background-image: url('../../../images/contact.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 750px;
+
+}
+.form{
+    padding-top: 150px;
+    margin-left: 750px;
+}
+.input{
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+}
