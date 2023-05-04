@@ -1,0 +1,27 @@
+.cook {
+    width: 400px;
+    height: 600px;
+}
+/* @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Playfair+Display:ital,wght@1,400;1,500&family=Poppins:wght@400;700&family=Roboto&family=Work+Sans:wght@400;600&display=swap'); */
+.cook-name {
+    font-size: 150px;
+    font-family: 'Cairo', sans-serif;
+
+
+}
+.cook-description{
+    
+}
+.border{
+    width: 150px;
+    height: 150px;
+    
+}
+.border-text{
+    font-size: 25px;
+    color: gray;
+}
+.number{
+    font-size: 50px;
+    color: darkcyan;
+}
