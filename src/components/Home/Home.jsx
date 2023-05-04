@@ -5,7 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 import ChefsCard from '../ChefsCard/ChefsCard';
 import AboutUs from '../AboutUs/AboutUs';
 import Contact from '../Contact/Contact';
-
+import img from '../../../images/Screenshot_363.png'
 
 const Home = () => {
     const chefsData = useLoaderData();
@@ -27,6 +27,9 @@ const Home = () => {
                 </div>
             </div>
             <AboutUs></AboutUs>
+            <div className='mt-20'>
+                <img src={img} alt="" />
+            </div>
             <Contact></Contact>
         </div>
     );

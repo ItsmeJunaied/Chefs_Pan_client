@@ -9,7 +9,9 @@ const Navbar = () => {
             </div>
             <div className="link-pages  mx-auto">
                 <Link className='' to='/home'>Home</Link>
-                <Link className='ml-4' to='/blog'>Blogs</Link>
+                <Link className='ml-4 ' to='/blog'>Blogs</Link>
+                <Link className='mx-4' to='/login'>LogIN</Link>
+                <Link className='ml-4' to='/register'>Register</Link>
             </div>
 
         </nav>

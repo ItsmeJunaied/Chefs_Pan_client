@@ -10,8 +10,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Recipes from './components/Recipes/Recipes.jsx';
-import RecipesCard from './components/recipesCard/recipesCard.jsx';
 import AboutUs from './components/AboutUs/AboutUs.jsx';
+import LogIN from './components/LogIN/LogIN.jsx';
+import Register from './components/Register/Register.jsx';
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,14 @@ const router = createBrowserRouter([
     {
       path:'aboutus',
       element:<AboutUs></AboutUs>
+    },
+    {
+      path:'login',
+      element:<LogIN></LogIN>
+    },
+    {
+      path:'register',
+      element:<Register></Register>
     },
     {
       path:'/chefsdata/:id',
