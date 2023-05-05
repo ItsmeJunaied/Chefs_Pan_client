@@ -15,6 +15,7 @@ import LogIN from './components/LogIN/LogIN.jsx';
 import Register from './components/Register/Register.jsx';
 import AuthProvider from './components/providers/AuthProvider.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
+import FourOfour from './components/FourOfour.jsx';
 
 
 const router = createBrowserRouter([
@@ -44,11 +45,14 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:5000/chefsdata/${params.id}`)
       },
       {
-        path: 'home',
+        path: '/',
         element: <Home></Home>,
         loader: () => fetch(`http://localhost:5000/chefsdata`)
       },
-
+      {
+        path: '*',
+        element: <FourOfour></FourOfour>
+      },
     ]
   }
 ]);

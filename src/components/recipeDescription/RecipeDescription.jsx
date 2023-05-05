@@ -1,7 +1,14 @@
 import React from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const RecipeDescription = ({data}) => {
     const {name, ingredients, method, rating}=data;
+
+    const handleClick = () => {
+        toast.success('BookMark Added');
+      };
+    
+
     return (
         <div>
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -15,7 +22,8 @@ const RecipeDescription = ({data}) => {
                             <svg className="w-6 h-6 text-yellow-500 mr-2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2.252v19.496l5.657 3.354-1.06-6.181L22 10.76l-6.364-1.038L12 2.252z"></path><path d="M12 2.252v19.496L6.343 24.102l1.06-6.181L2 10.76l6.364-1.038L12 2.252z"></path></svg>
                             <p className="text-gray-700 font-bold">{rating}</p>
                         </div>
-                        <button className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-green-400 text-white font-bold py-2 px-4 rounded-full focus:outline-none">Bookmark</button>
+                        <button onClick={handleClick} className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-blue-500 hover:to-green-400 text-white font-bold py-2 px-4 rounded-full focus:outline-none">Bookmark</button>
+                        <ToastContainer />
                     </div>
                 </div>
             </div>

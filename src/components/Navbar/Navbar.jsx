@@ -1,31 +1,38 @@
 import React, { useContext } from 'react';
-import logo from'../../../images/Restaurant Logo 3.png';
-import { Link } from 'react-router-dom';
+import logo from '../../../images/Restaurant Logo 3.png';
+import './Navbar.css';
 import { AuthContext } from '../providers/AuthProvider';
+import ActiveLInk from '../ActiveLink/ActiveLInk';
 const Navbar = () => {
-    const {user,logOut}=useContext(AuthContext);
-    const handleLogout=()=>{
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogout = () => {
         logOut()
-        .then()
-        .catch(error=>console.log(error));
-        
+            .then()
+            .catch(error => console.log(error));
+
     }
+    console.log(user);
     return (
-        <nav className='nav-bar flex justify-center items-center container mx-auto'>
+        <nav className='nav-bar flex justify-evenly items-center container mx-auto'>
             <div className="header-logo flex-none">
                 <img className='logo w-40 h-40' src={logo} alt="Not found" />
             </div>
-            <div className="link-pages  mx-auto">
-                <Link className='' to='/home'>Home</Link>
-                <Link className='ml-4 ' to='/blog'>Blogs</Link>
-                
-                <Link className='ml-4' to='/register'>Register</Link>
+            <div className="link-pages flex justify-evenly  mx-auto">
+                <ActiveLInk className=' links mr-10' to='/'>Home</ActiveLInk>
+                <ActiveLInk className='mr-10' to='/blog'>Blogs</ActiveLInk>
+
                 {
-                    user && <span>{user.email}</span>
+                    user ? null : <ActiveLInk className='' to='/register'>Register</ActiveLInk>
+                }
+
+
+
+                {
+                    user && <img className="w-10 h-10 rounded-full ml-10" src={user.photoURL} title={user.displayName} alt="User avatar" />
                 }
                 {
-                    user ? <button onClick={handleLogout} > log Out</button>:
-                    <Link className='mx-4' to='/login'>LogIN</Link>
+                    user ? <button className='ml-10' onClick={handleLogout} > log Out</button> :
+                        <ActiveLInk className='ml-10' to='/login'>LogIN</ActiveLInk>
                 }
             </div>
 

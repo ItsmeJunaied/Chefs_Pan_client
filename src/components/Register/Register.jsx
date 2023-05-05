@@ -1,8 +1,10 @@
+
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import image from '../../../images/login-2.jpg'
 import { AuthContext } from '../providers/AuthProvider';
-const LogIN = () => {
+import { updateProfile } from 'firebase/auth';
+const Register = () => {
     const [error,setError]=useState('');
     const{createUser}= useContext(AuthContext);
     const handleRegister=event=>{
@@ -14,7 +16,7 @@ const LogIN = () => {
         const photo=form.photo.value;
         const name=form.name.value;
 
-        console.log(name,email,password,photo);
+        console.log(photo);
         setError('');
         if(password.length<6){
             setError('password Must be 6 characters')
@@ -22,7 +24,9 @@ const LogIN = () => {
         createUser(email,password)
         .then(result=>{
             const loggedUser=result.user;
-            console.log(loggedUser)
+            updateUserProfile(result.user,name,photo);
+            
+            
         })
         .catch(error=>{
             console.log(error);
@@ -30,6 +34,18 @@ const LogIN = () => {
         })
     }
 
+    const updateUserProfile=(user,name,photo)=>{
+        updateProfile(user,{
+            displayName:name,
+            photoURL: photo
+        })
+        .then(()=>{
+            console.log('updated')
+        })
+        .catch(()=>{
+            setError(error.message)
+        })
+    }
     return (
         <div>
             <div className="flex flex-col md:flex-row items-center justify-center h-screen bg-gray-100">
@@ -70,7 +86,7 @@ const LogIN = () => {
                         </div>
                         <div className="flex items-center justify-between">
                             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                                Log In
+                                Register
                             </button>
                             <div className="flex items-center">
                                 <span className="text-gray-600 mr-2">Or log in with:</span>
@@ -85,7 +101,7 @@ const LogIN = () => {
                     </form>
                     <div className="mt-6">
                         <p className="text-gray-600">Already have an account? 
-                        <Link to={'/login'}><buttton className="underline">Register</buttton></Link></p>
+                        <Link to={'/login'}><buttton className="underline">Log IN</buttton></Link></p>
                     </div>
                     <p>{error}</p>
                 </div>
@@ -94,4 +110,5 @@ const LogIN = () => {
     );
 };
 
-export default LogIN;
+
+export default Register;
