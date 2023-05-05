@@ -102,7 +102,7 @@ const LogIN = () => {
                         </div>
                     </form>
                     <div className="mt-6">
-                        <p className="text-gray-600">Don't have an account?
+                        <p className=" text-red-600">Don't have an account?
                             <Link to={'/register'}><buttton className="underline">Sign up</buttton></Link></p>
                     </div>
                 </div>
