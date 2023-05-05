@@ -55,7 +55,7 @@ const Register = () => {
                 </div>
 
 
-                <div className="flex flex-col w-full md:w-1/2 p-10">
+                <div className="flex flex-col w-full md:w-1/2 p-10 mt-16">
                     <div className="mb-4">
                         <h2 className="text-3xl font-bold text-gray-900">Register</h2>
                     </div>
@@ -88,19 +88,10 @@ const Register = () => {
                             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                                 Register
                             </button>
-                            <div className="flex items-center">
-                                <span className="text-gray-600 mr-2">Or log in with:</span>
-                                <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline" type="button">
-                                    <i className="fab fa-google"></i> Google
-                                </button>
-                                <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline ml-2" type="button">
-                                    <i className="fab fa-github"></i> GitHUB
-                                </button>
-                            </div>
                         </div>
                     </form>
-                    <div className="mt-6">
-                        <p className="text-gray-600">Already have an account? 
+                    <div className="mt-6 mb-24">
+                        <p className=" text-red-600">Already have an account? 
                         <Link to={'/login'}><buttton className="underline">Log IN</buttton></Link></p>
                     </div>
                     <p>{error}</p>

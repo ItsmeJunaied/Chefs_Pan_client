@@ -32,7 +32,7 @@ const Navbar = () => {
                 }
                 {
                     user ? <button className='ml-10' onClick={handleLogout} > log Out</button> :
-                        <ActiveLInk className='ml-10' to='/login'>LogIN</ActiveLInk>
+                        <ActiveLInk className='ml-10' to='/login'>Log IN</ActiveLInk>
                 }
             </div>
 
