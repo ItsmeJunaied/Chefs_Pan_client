@@ -42,12 +42,12 @@ const router = createBrowserRouter([
       {
         path: '/chefsdata/:id',
         element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/chefsdata/${params.id}`)
+        loader: ({ params }) => fetch(`https://chefs-recipie-server-itsmejunaied.vercel.app/chefsdata/${params.id}`)
       },
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch(`http://localhost:5000/chefsdata`)
+        loader: () => fetch(`https://chefs-recipie-server-itsmejunaied.vercel.app/chefsdata`)
       },
       {
         path: '*',
